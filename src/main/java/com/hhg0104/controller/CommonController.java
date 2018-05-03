@@ -18,13 +18,6 @@ public class CommonController {
 	 */
 	public UserInfo getUserInfo(HttpSession session) throws SessionElementException {
 
-		// TODO 테스트 코드 추후 수정 필요 -->
-		UserInfo userInfo = new UserInfo();
-		userInfo.setIdx(1);
-
-		session.setAttribute("user", userInfo);
-		// TODO 테스트 코드 추후 수정 필요 <--
-
 		Object userInfoObj = session.getAttribute("user");
 		if (userInfoObj == null || !(userInfoObj instanceof UserInfo)) {
 			throw new SessionElementException("you need to login first.");
